@@ -1,0 +1,113 @@
+/* Sabhi elements ka default margin/padding hatao, aur size calculation simple rakho */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Page ka background aur font */
+body {
+  background-color: #f0f0f0;
+  font-family: system-ui, Arial, sans-serif;
+}
+
+/* Outer wrapper: content ko center mein rakhta hai */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* White form card */
+.apply_box {
+  max-width: 600px;
+  padding: 20px;
+  background-color: white;
+  margin: 50px auto; /* upar-neeche 50px, side se auto = center */
+  box-shadow: 4px 3px 5px rgba(1, 1, 1, 0.1);
+  border-radius: 10px;
+}
+
+/* Heading ke andar chhota "(Web)" text */
+.title_small {
+  font-size: 20px;
+}
+
+/* Responsive grid: jitni jagah ho utne columns (min 200px har ek) */
+.form_container {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+/* Har field: label upar, input neeche */
+.form_control {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+/* Saare inputs ka common style */
+input,
+select,
+textarea {
+  font-family: inherit; /* warna textarea monospace font mein dikhta hai */
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+/* Focus hone par red outline (keyboard users ke liye bhi helpful) */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid red;
+  outline-offset: 1px;
+}
+
+/* Button ko right side par align karta hai */
+.button_container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+/* Submit button ka base style */
+button {
+  background-color: red;
+  border: 2px solid transparent;
+  padding: 8px 16px;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* hover par smooth colour change */
+}
+
+/* Hover par thoda gehra red */
+button:hover {
+  background-color: #b30000;
+}
+
+/* Address field poori width leta hai (1 se last column tak) */
+.textarea_control {
+  grid-column: 1 / -1;
+}
+
+/* Textarea poori width, aur sirf upar-neeche resize hoga */
+textarea {
+  width: 100%;
+  resize: vertical;
+}
+
+/* Mobile (460px ya kam): button poori width ka */
+@media (max-width: 460px) {
+  .button_container button {
+    width: 100%;
+    padding: 10px;
+  }
+}
